@@ -1,0 +1,10 @@
+2026-10-26 19:40:03,748 INFO    mode=crawl | sites=['kubernetes_docs'] | log: logs/crawl_20261026_194003.log
+2026-10-26 19:40:03,749 INFO    ==============================================================================
+2026-10-26 19:40:03,749 INFO    SITE kubernetes_docs | render=static
+2026-10-26 19:40:04,441 INFO      sitemaps read: 2 | URLs listed: 1887
+2026-10-26 19:40:04,443 INFO      [sitemap] 1887 raw urls (1s)
+2026-10-26 19:40:04,455 INFO      [robots] 0 raw urls (0s)
+2026-10-26 19:40:04,828 INFO      [feeds] 0 raw urls (0s)
+2026-10-26 19:40:22,236 INFO      [wayback] 1 raw urls (17s)
+2026-10-26 19:40:42,174 WARNING     archive HTTP 504 (attempt 1) - backing off
+2026-10-26 19:40:49,763 WARNING Interrupted - progress saved. Re-run the same command to resume.

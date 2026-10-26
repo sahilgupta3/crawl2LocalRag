@@ -1,0 +1,8 @@
+2026-10-26 19:39:25,855 INFO    mode=crawl | sites=['kubernetes_docs'] | log: logs/crawl_20261026_193925.log
+2026-10-26 19:39:25,856 INFO    ==============================================================================
+2026-10-26 19:39:25,856 INFO    SITE kubernetes_docs | render=static
+2026-10-26 19:39:26,423 INFO      sitemaps read: 2 | URLs listed: 1887
+2026-10-26 19:39:26,424 INFO      [sitemap] 1887 raw urls (1s)
+2026-10-26 19:39:26,436 INFO      [robots] 0 raw urls (0s)
+2026-10-26 19:39:26,953 INFO      [feeds] 0 raw urls (1s)
+2026-10-26 19:40:03,480 WARNING Interrupted - progress saved. Re-run the same command to resume.

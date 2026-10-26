@@ -1,0 +1,6 @@
+2026-10-26 19:35:39,111 INFO    mode=discover | sites=['kubernetes_docs'] | log: logs/crawl_20261026_193539.log
+2026-10-26 19:35:39,111 INFO    discovering kubernetes_docs ...
+2026-10-26 19:35:39,680 INFO      sitemaps read: 2 | URLs listed: 1887
+2026-10-26 19:35:39,681 INFO      [sitemap] 1887 raw urls (1s)
+2026-10-26 19:35:39,692 INFO      [robots] 0 raw urls (0s)
+2026-10-26 19:35:40,193 INFO      [feeds] 0 raw urls (1s)

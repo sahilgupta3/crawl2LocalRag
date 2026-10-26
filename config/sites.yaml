@@ -1,0 +1,80 @@
+# crawl2LocalRag - site configuration
+# "defaults" apply to every site; a site block can override any key.
+# exclude_selectors are MERGED (defaults + site); all other keys override.
+# Regex patterns use single quotes so backslashes stay literal.
+
+defaults:
+  user_agent: "Mozilla/5.0 (compatible; crawl2LocalRag/0.1; +https://github.com/yourGithubUsername/crawl2LocalRag)"
+  respect_robots: true
+  allowed_languages: ["en"]     # URLs that explicitly signal another language are skipped (content never checked)
+  render: static                # static | playwright | auto (static first, Chromium fallback; needs ./setup.sh --browser)
+  workers: 4                    # parallel threads per site
+  requests_per_second: 2        # per-domain politeness limit
+  min_text_chars: 300           # quality gate: pages with less main text are not saved
+  max_pages: 0                  # cap per site per run (0 = no cap)
+  max_consecutive_errors: 30    # stop a site after N consecutive real errors
+  keep_query: false
+  select_all: false             # true = join all matches of the content selector (forums)
+  latest_version_only: false    # true = keep only the newest version of versioned manuals (/x/1.2/ vs /x/1.3/)
+  recheck_days: 14              # re-try thin / gone / redirect / failed URLs after this many days
+
+  discovery: [sitemap, robots, feeds, wayback, commoncrawl, bfs]
+  bfs: true                     # follow in-page links (remembered for the next run)
+  bfs_max_new: 5000
+  archive_from_year: 2023       # Wayback Machine: URLs captured since this year
+  archive_max_pages: 25
+  archive_refresh_days: 30      # archive results are cached this long
+  commoncrawl_crawls: 3         # newest N Common Crawl snapshots
+
+  drop_line_patterns: []        # regex for boilerplate lines to remove (never inside code blocks)
+  content_selectors: ["article", "main", "[role=main]"]
+  exclude_selectors:
+    - "nav"
+    - "header"
+    - "footer"
+    - "aside"
+    - "[role=navigation]"
+    - "[role=banner]"
+    - "[role=contentinfo]"
+    - "[role=dialog]"
+    - ".breadcrumb"
+    - ".breadcrumbs"
+    - ".skip-link"
+    - "[id*=cookie]"
+    - "[class*=cookie]"
+    - "[class*=consent]"
+    - "[class*=announcement]"
+    - "[class*=promo]"
+    - "[class*=advert]"
+    - "[class*=newsletter]"
+    - "[class*=subscribe]"
+    - "[class*=social]"
+    - "[class*=share]"
+    - "[class*=feedback]"
+    - "[class*=rating]"
+    - "[class*=popup]"
+    - "[class*=modal]"
+    - "[class*=toast]"
+
+sites:
+  # ------------------------------------------------------------------ demo: Kubernetes docs (CC BY 4.0)
+  - name: kubernetes_docs
+    enabled: true
+    base_url: https://kubernetes.io/docs/
+    sitemaps: ["https://kubernetes.io/sitemap.xml"]
+    allowed_domains: ["kubernetes.io"]
+    include_patterns: ['^https://kubernetes\.io/docs(/|$)']
+    content_selectors: [".td-content", "main", "article"]
+    exclude_selectors: [".td-sidebar", ".td-sidebar-toc", ".td-toc", "#pre-footer", ".td-page-meta", ".pageinfo"]
+    drop_line_patterns: ['^Items on this page$', '^Edit this page$', '^Create child page$', '^Create an issue$',
+                         '^Print entire section$']
+
+  # ------------------------------------------------------------------ template: copy, rename, enable
+  - name: example_docs
+    enabled: false
+    base_url: https://docs.example.com/
+    sitemaps: ["https://docs.example.com/sitemap.xml"]
+    allowed_domains: ["docs.example.com"]
+    render: auto
+    include_patterns: []
+    exclude_patterns: []

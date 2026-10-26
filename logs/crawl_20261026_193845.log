@@ -1,0 +1,8 @@
+2026-10-26 19:38:45,317 INFO    mode=crawl | sites=['kubernetes_docs'] | log: logs/crawl_20261026_193845.log
+2026-10-26 19:38:45,319 INFO    ==============================================================================
+2026-10-26 19:38:45,319 INFO    SITE kubernetes_docs | render=static
+2026-10-26 19:38:45,903 INFO      sitemaps read: 2 | URLs listed: 1887
+2026-10-26 19:38:45,905 INFO      [sitemap] 1887 raw urls (1s)
+2026-10-26 19:38:45,917 INFO      [robots] 0 raw urls (0s)
+2026-10-26 19:38:46,415 INFO      [feeds] 0 raw urls (0s)
+2026-10-26 19:38:57,664 WARNING     archive HTTP 503 (attempt 1) - backing off

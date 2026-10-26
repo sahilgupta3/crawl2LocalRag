@@ -1,0 +1,16 @@
+{
+  "url": "https://kubernetes.io/docs/concepts/cluster-administration/node-autoscaling",
+  "source": "kubernetes_docs",
+  "title": "Node Autoscaling",
+  "description": "Automatically provision and consolidate the Nodes in your cluster to adapt to demand and optimize cost.",
+  "published": "",
+  "modified": "2026-10-14T11:45:23+00:00",
+  "sitemap_lastmod": "2026-10-14T11:45:23+00:00",
+  "content_hash": "25ccfaae925bfaac0fac091ed0a8c20f",
+  "render_mode": "static",
+  "word_count": 1865,
+  "discovered_by": [
+    "sitemap"
+  ],
+  "scraped_at": "2026-10-26T18:35:49+00:00"
+}

@@ -1,0 +1,1 @@
+# One URL per line. Lines starting with # are ignored. Run: ./crawl.sh --mode urls
